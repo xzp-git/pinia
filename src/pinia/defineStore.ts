@@ -7,10 +7,9 @@ import {
   toRefs,
 } from "vue";
 import { SymbolPinia, setActivePinia, activePinia } from "./rootStore";
-
-export function defineStore(idOrOptions, setup) {
-  let id;
-  let options;
+export function defineStore(idOrOptions: any, setup: any) {
+  let id: any;
+  let options: any;
 
   if (typeof idOrOptions === "string") {
     id = idOrOptions;
@@ -29,7 +28,7 @@ export function defineStore(idOrOptions, setup) {
 
     //注册了一个store
 
-    let pinia = currentInstance && inject(SymbolPinia);
+    let pinia: any = currentInstance && inject(SymbolPinia);
     if (pinia) setActivePinia(pinia);
     pinia = activePinia;
     if (!pinia._s.has(id)) {
@@ -47,7 +46,7 @@ export function defineStore(idOrOptions, setup) {
   return useStore;
 }
 
-function createSetupStore(id, setup, pinia) {
+function createSetupStore(id: any, setup: any, pinia: any) {
   const store = reactive({});
 
   let scope;
@@ -56,7 +55,7 @@ function createSetupStore(id, setup, pinia) {
     return scope.run(() => setup(store));
   });
 
-  function wrapAction(name, action) {
+  function wrapAction(name: any, action: any) {
     return function () {
       let ret = action.apply(store, arguments);
 
@@ -77,7 +76,7 @@ function createSetupStore(id, setup, pinia) {
   return store;
 }
 
-function createOptionsStore(id, options, pinia) {
+function createOptionsStore(id: any, options: any, pinia: any) {
   let { state, getters, actions } = options;
 
   function setup() {
@@ -87,7 +86,7 @@ function createOptionsStore(id, options, pinia) {
     return Object.assign(
       localState,
       actions,
-      Object.keys(getters || {}).reduce((computedGetters, name) => {
+      Object.keys(getters || {}).reduce((computedGetters: any, name) => {
         computedGetters[name] = computed(() => {
           return getters[name].call(store, store);
         });

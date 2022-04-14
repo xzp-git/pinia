@@ -5,7 +5,7 @@ import { computed, reactive, toRefs } from "vue";
 export const useCounterStore = defineStore("counter", {
   state: () => ({ count: 1, fruits: ["香蕉", "苹果"] }),
   getters: {
-    doubleCount: (store) => store.count * 2, // 计算属性
+    doubleCount: (store: any) => store.count * 2, // 计算属性
   },
   actions: {
     increment() {

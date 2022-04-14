@@ -7,10 +7,10 @@ export function createPinia() {
   //run方法的返回值就是这个fn的返回结果
   const state = scope.run(() => ref({}));
 
-  const _p = [];
+  const _p: any = [];
 
   const pinia = markRaw({
-    install(app) {
+    install(app: any) {
       pinia._a = app;
       app.provide(SymbolPinia, pinia);
       app.config.globalProperties.$pinia = pinia;
