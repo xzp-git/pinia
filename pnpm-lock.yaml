@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@vitejs/plugin-vue': ^2.3.0
+  '@vue/shared': ^3.2.33
   pinia: ^2.0.13
   typescript: ^4.5.4
   vite: ^2.9.0
@@ -9,6 +10,7 @@ specifiers:
   vue-tsc: ^0.29.8
 
 dependencies:
+  '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.33
   pinia: registry.npmmirror.com/pinia/2.0.13_typescript@4.6.3+vue@3.2.32
   vue: registry.npmmirror.com/vue/3.2.32
 
@@ -137,7 +139,7 @@ packages:
       '@volar/source-map': registry.npmmirror.com/@volar/source-map/0.29.8
       '@vue/compiler-core': registry.npmmirror.com/@vue/compiler-core/3.2.32
       '@vue/compiler-dom': registry.npmmirror.com/@vue/compiler-dom/3.2.32
-      '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.32
+      '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.33
       upath: registry.npmmirror.com/upath/2.0.1
     dev: true
 
@@ -259,6 +261,11 @@ packages:
     resolution: {integrity: sha512-bjcixPErUsAnTQRQX4Z5IQnICYjIfNCyCl8p29v1M6kfVzvwOICPw+dz48nNuWlTOOx2RHhzHdazJibE8GSnsw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/-/shared-3.2.32.tgz}
     name: '@vue/shared'
     version: 3.2.32
+
+  registry.npmmirror.com/@vue/shared/3.2.33:
+    resolution: {integrity: sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/-/shared-3.2.33.tgz}
+    name: '@vue/shared'
+    version: 3.2.33
 
   registry.npmmirror.com/acorn/7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn/-/acorn-7.4.1.tgz}
@@ -1212,7 +1219,7 @@ packages:
       '@volar/vue-code-gen': registry.npmmirror.com/@volar/vue-code-gen/0.29.8
       '@vscode/emmet-helper': registry.npmmirror.com/@vscode/emmet-helper/2.8.4
       '@vue/reactivity': registry.npmmirror.com/@vue/reactivity/3.2.32
-      '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.32
+      '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.33
       request-light: registry.npmmirror.com/request-light/0.5.8
       upath: registry.npmmirror.com/upath/2.0.1
       vscode-css-languageservice: registry.npmmirror.com/vscode-css-languageservice/5.4.1

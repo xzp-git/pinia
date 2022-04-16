@@ -3,44 +3,46 @@ import { useCounterStore } from "./stores/counter";
 
 const store = useCounterStore(); // 你的状态直接就放到了store上
 
-// const { increment } = store;
+const { increment } = store;
 
-// setTimeout(()=>{
-//   store.$dispose();
-// },1000)
+setTimeout(()=>{
+  console.log("sss");
+  
+  store.$dispose();
+},1000)
 
 const handleClick = () => {
   // store.$state = {count:100,fruits:[]}
   //  store.count++; // type: 'direct'
-  store.count++;
+  // store.count++;
   // let fruits = [...store.fruits, '橘子']
   //  store.$patch({ // patch object
   //    count: ++store.count,
-  //   //  fruits
+  //    fruits
   //  })
   // store.$patch(() => { // patch function
   //   store.count++;
   //    store.count++;
   // })
   // store.$reset(); // 重置状态
-  // increment()
+  increment()
 };
-// store.$subscribe((mutation,state)=>{ // 回调
+// store.$subscribe((mutation:any,state:any)=>{ // 回调
 //     console.log('数据变化',state,mutation);
 // })
-// store.$onAction(({after,onError,name})=>{ // 发布订阅
-//   console.log('action执行了',name);
+store.$onAction(({after,onError,name})=>{ // 发布订阅
+  console.log('action执行了',name);
 
-//   after((result)=>{
-//     console.log('状态已经更新完毕了',result)
-//   })
-//   after((result)=>{
-//     console.log('状态已经更新完毕了',result)
-//   })
-//   onError(()=>{
-//     console.log('出错')
-//   })
-// })
+  after((result: any)=>{
+    console.log('状态已经更新完毕了',result)
+  })
+  // after((result: any)=>{
+  //   console.log('状态已经更新完毕了',result)
+  // })
+  onError(()=>{
+    console.log('出错')
+  })
+})
 </script>
 
 <template>
@@ -49,6 +51,7 @@ const handleClick = () => {
   双倍:{{ store.doubleCount }} <br />
 
   <button @click="handleClick">点击增加</button>
+  <button @click="store.$reset">reset</button>
 
   <div v-for="item in store.fruits" :key="item">
     {{ item }}
